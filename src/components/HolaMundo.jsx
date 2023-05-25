@@ -1,28 +1,7 @@
-import { faker } from '@faker-js/faker/locale/es_MX';
 import { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-const generaTitulo = () => {
-    const titulo = faker.commerce.productName();
-    return titulo;
-}
-
-const generaTexto = () => {
-    const texto = faker.lorem.paragraph();
-    return texto;
-}
-
-const generaNombre = () => {
-    return faker.person.firstName();
-}
-
-const generaApellidos = () => {
-    return faker.person.lastName();
-}
-
-const generaEmail = (nombre, apellidos) => {
-    return faker.internet.email({firstName: nombre, lastName: apellidos});
-}
+import { generaTitulo, generaNombre, generaApellidos, generaEmail, generaTexto } from '../data/DataFake';
 
 const HolaMundo = ({nombre,apellidos,email,titulo,sueldo,producto}) => {
 
