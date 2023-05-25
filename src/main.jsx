@@ -1,20 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { HolaMundo } from "./components/HolaMundo";
-import { generaProducto } from './data/DataFake';
-
-const miProducto = generaProducto();
+import { HolaMundoApp } from "./HolaMundoApp";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <HolaMundo nombre = {'Jesús'} 
+    {/* <HolaMundoApp nombre = {'Jesús'} 
                apellidos = {'Zúñiga Trejo'} 
                email = {'zutjmx@gmail.com'}
                sueldo = {30000}
                titulo = {'Actuario'}
-               producto = {miProducto}
-    />
-    {/* <HolaMundo /> */}
+               texto = {'Cualquier texto'}
+               producto = {{propiedad1:1,propiedad2:2,propiedad3:3}}
+    /> */}
+    <HolaMundoApp />
   </React.StrictMode>,
   
 )

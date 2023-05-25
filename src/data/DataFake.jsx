@@ -1,5 +1,15 @@
 import { faker } from '@faker-js/faker/locale/es_MX';
 
+const generaPersona = () => {
+    return {
+        nombre: faker.person.firstName(),
+        apellidos: faker.person.lastName(),
+        email: generaEmail(),
+        celular: faker.phone.number(),
+        sueldo: generaSueldo()
+    };
+}
+
 const generaProducto = () => {
   const descripcion = faker.commerce.product();
   const precio = faker.number.int({min:300,max:5000});
@@ -34,6 +44,10 @@ const generaEmail = (nombre, apellidos) => {
     return faker.internet.email({firstName: nombre, lastName: apellidos});
 }
 
+const generaSueldo = () => {
+    return faker.number.int({min:20000,max:40000});
+}
+
 export {
     generaProducto,
     generaTitulo,
@@ -41,4 +55,6 @@ export {
     generaNombre,
     generaApellidos,
     generaEmail,
+    generaSueldo,
+    generaPersona
 }
