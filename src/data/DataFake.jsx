@@ -5,7 +5,7 @@ const generaPersona = () => {
         nombre: faker.person.firstName(),
         apellidos: faker.person.lastName(),
         email: generaEmail(),
-        celular: faker.phone.number(),
+        celular: generaNumeroCelular(),
         sueldo: generaSueldo()
     };
 }
@@ -48,6 +48,10 @@ const generaSueldo = () => {
     return faker.number.int({min:20000,max:40000});
 }
 
+const generaNumeroCelular = () => {
+    return faker.phone.number();
+}
+
 export {
     generaProducto,
     generaTitulo,
@@ -56,5 +60,6 @@ export {
     generaApellidos,
     generaEmail,
     generaSueldo,
-    generaPersona
+    generaPersona,
+    generaNumeroCelular
 }

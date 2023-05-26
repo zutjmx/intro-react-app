@@ -1,19 +1,29 @@
 import { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Titulo } from './components/Titulo';
+import { Texto } from './components/Texto';
+import { Persona } from './components/Persona';
+import { Producto } from './components/Producto';
 
-import { generaTitulo, generaNombre, generaApellidos, generaEmail, generaTexto, generaProducto, generaSueldo } from './data/DataFake';
+import { generaTitulo, 
+         generaNombre, 
+         generaApellidos, 
+         generaEmail, 
+         generaTexto, 
+         generaProducto, 
+         generaSueldo } from './data/DataFake';
 
 const HolaMundoApp = ({nombre,apellidos,email,titulo,texto,sueldo,producto}) => {
     return (
         <Fragment>
             <Titulo titulo={titulo}/>
-            <h3>{texto}</h3>
-            <p>Cliente: {nombre} {apellidos}</p>
-            <p>Email: {email}</p>
-            <h4>Sueldo bruto: {sueldo}</h4>
-            <h4>Sueldo neto: {sueldo - 5000}</h4>
-            <div>Producto: {JSON.stringify(producto)}</div>
+            <Texto texto={texto}/>
+            <Persona nombre={nombre}
+                     apellidos={apellidos}
+                     email={email}
+                     sueldo={sueldo} 
+            />
+            <Producto producto={producto} />
         </Fragment>
     );
 }
